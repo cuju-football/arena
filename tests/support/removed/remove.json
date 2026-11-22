@@ -1,0 +1,20 @@
+{
+    "removed": [
+        {
+            "pattern": "challenge",
+            "spare": [
+                "challengers?",
+                "challenges the king",
+                "a dethroned king challenges too",
+                "the challenges of a king",
+                "label\\.challenges?': 'Challenges?( \\{number\\})?'",
+                "_label\\('challenges?'"
+            ],
+            "files": [
+                "!tests/arena/test_old_recordings.py",
+                "!tests/support/format/v010_challenge_header.json"
+            ],
+            "reason": "the Challenges page left with its command, its public names and its routes, the academy benchmark of Evaluate plays the academy tasks, and a challenger of a ladder or of a king of the hill and the label of a match in which one challenges the king stay words of the tournaments"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "players": 32,
+    "frames": 50000,
+    "header_bytes": 1048576,
+    "keyframe_interval": 100,
+    "decompressed_bytes": {
+        "python": 268435456,
+        "page": 134217728
+    }
+}

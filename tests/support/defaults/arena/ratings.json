@@ -1,0 +1,26 @@
+{
+    "method": "points",
+    "anchor": 0.6,
+    "sources": ["tournament", "rating", "evaluation", "match"],
+    "rule": "default",
+    "confidence": 0.95,
+    "evidence": {
+        "matches": 4,
+        "anchor_matches": 2,
+        "width": null
+    },
+    "run": {
+        "mode": "auto",
+        "matches": 8,
+        "anchor_matches": 2,
+        "at_once": 2,
+        "most": null,
+        "settle": 0.9,
+        "seed": null,
+        "pairing": "least_settled",
+        "device": "cpu",
+        "threads": 0,
+        "keep": "nothing",
+        "limit": 32
+    }
+}

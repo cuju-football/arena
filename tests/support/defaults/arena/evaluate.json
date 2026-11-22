@@ -1,0 +1,57 @@
+{
+    "name": null,
+    "run": null,
+    "checkpoint": null,
+    "policy": null,
+    "policy_options": {},
+    "interface": "batch",
+    "scenario": "11_vs_11_kaggle",
+    "agents": 1,
+    "difficulty": null,
+    "episodes": 100,
+    "seed": 1000003,
+    "device": "cpu",
+    "threads": 0,
+    "sides": "left",
+    "mode": "auto",
+    "at_once": 1,
+    "most": null,
+    "settle": 0.9,
+    "pairing": "least_settled",
+    "rate": true,
+    "batch": {
+        "representation": "simple115v2"
+    },
+    "opponents": [
+        {
+            "kind": "builtin",
+            "difficulty": 0.05,
+            "team": null
+        },
+        {
+            "kind": "builtin",
+            "difficulty": 0.6,
+            "team": null
+        },
+        {
+            "kind": "builtin",
+            "difficulty": 1.0,
+            "team": null
+        }
+    ],
+    "record": {
+        "keep": "losses",
+        "limit": 32,
+        "annotations": true,
+        "extras_mb": 256,
+        "background": true
+    },
+    "stats": {
+        "episodes": "recorded",
+        "confidence": 0.95,
+        "resamples": 1000
+    },
+    "format": "open",
+    "format_preset": null,
+    "format_options": {}
+}

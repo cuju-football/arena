@@ -1,0 +1,68 @@
+{
+    "comment": "The engine links used in the arena guides and the reasons for omitted checks.",
+    "cuju": [
+        "",
+        "blob/main/docs/api.md#step-observers",
+        "blob/main/docs/rewards-and-actions.md#actions"
+    ],
+    "skip": [
+        {
+            "host": "127.0.0.1",
+            "reason": "the address of a server on this computer"
+        },
+        {
+            "host": "localhost",
+            "reason": "the address of a server on this computer"
+        },
+        {
+            "host": "::1",
+            "reason": "the address of a server on this computer"
+        },
+        {
+            "host": "0.0.0.0",
+            "reason": "the address a server listens on, which no browser opens"
+        },
+        {
+            "host": "example.com",
+            "reason": "an address of the examples"
+        },
+        {
+            "host": "example.org",
+            "reason": "an address of the examples"
+        },
+        {
+            "host": "www.w3.org",
+            "reason": "the namespaces of SVG, XHTML and XLink, names rather than links"
+        }
+    ],
+    "removed": [
+        {
+            "pattern": "montage",
+            "reason": "the promotional montage of Home was removed"
+        },
+        {
+            "pattern": "mistermender|freesound\\.org/s/512340",
+            "reason": "the music of the montage left with it"
+        },
+        {
+            "pattern": "cuju-teaser|cuju-montage",
+            "reason": "the montage, its poster and its short cut left cuju's docs/assets"
+        },
+        {
+            "pattern": "ARCHITECTURE\\.md",
+            "reason": "the map of the sources is the Layout section of CONTRIBUTING.md"
+        },
+        {
+            "pattern": "make_app_icons",
+            "reason": "ci/brand/make_brand.py renders every icon of the page from the logo system"
+        },
+        {
+            "pattern": "(?<![\\w-])pt\\.json",
+            "reason": "the draft of Brazilian Portuguese is translations/pt-BR/pt-BR.json, and the page ships English alone"
+        },
+        {
+            "pattern": "AndreKoraleski/cuju/(blob|tree)/main/docs/rendering\\.md",
+            "reason": "the renderer's guides are in docs/ of cuju-render, and cuju's page of that name only introduces the package"
+        }
+    ]
+}

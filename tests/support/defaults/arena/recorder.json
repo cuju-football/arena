@@ -1,0 +1,8 @@
+{
+    "keep": "all",
+    "every": 1,
+    "min_reward": null,
+    "version": 2,
+    "inspector": "auto",
+    "capture": "state"
+}

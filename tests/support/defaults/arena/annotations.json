@@ -1,0 +1,7 @@
+{
+    "probabilities": 3,
+    "max_values": 16,
+    "perspective": "agent",
+    "grid_cells": 6912,
+    "grid_every": 1
+}

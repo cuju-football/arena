@@ -1,0 +1,8 @@
+{
+    "tasks": "all",
+    "keep_recordings": false,
+    "workers": "auto",
+    "format": "open",
+    "format_preset": null,
+    "format_options": {}
+}

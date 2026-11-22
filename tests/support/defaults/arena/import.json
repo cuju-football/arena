@@ -1,0 +1,11 @@
+{
+    "fidelity": "auto",
+    "device": "cpu",
+    "folder": "Imported",
+    "title": null,
+    "environments": "all",
+    "max_bytes": 104857600,
+    "max_files": 16,
+    "max_recordings": 64,
+    "timeout": 1800
+}

@@ -1,0 +1,6 @@
+{
+    "value_drop": 0.3,
+    "window": 2.0,
+    "surprise": 0.1,
+    "detectors": ["cuju", "value_drop", "surprise", "entropy"]
+}
