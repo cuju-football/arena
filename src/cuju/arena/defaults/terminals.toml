@@ -1,0 +1,15 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The terminals of format processes, `<home>/terminals/`, one folder for each pre-check or match.
+[terminals]
+# The MiB that every terminal together may hold. Past it the oldest runs leave first, apart from
+# those that still print and those of a refusal or a forfeit that a tournament still holds.
+max_mib = 512
+# The days that the terminals of a refusal or a forfeit stay pinned when no tournament ever claims
+# them. Past it they leave like any other run. A pin that a tournament holds stays until the
+# tournament is sealed.
+pin_days = 30
+
+[accepts.terminals]
+max_mib = { minimum = 1 }
+pin_days = { minimum = 1 }

@@ -1,0 +1,8 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The library of recordings in the home folder.
+[library]
+# Whether a recording that is saved or imported has its moments, signals and statistics found at
+# once, in a thread of the process that saves it. False leaves them to the server, which finds
+# them at its next pass over the library or when a page asks for the recording.
+index_on_save = true

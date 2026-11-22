@@ -1,0 +1,19 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The folder that submission formats keep between runs, `<home>/format-cache/`, one folder for
+# each format identity and checkpoint, which a format reads as `Match.cache`.
+[formats]
+# The GiB that every cache folder together may hold. Past it the folders used least recently
+# leave first.
+cache_gib = 20.0
+# The GiB that the cache folder of one format identity and checkpoint may hold. Past it the
+# folder is emptied before its next match.
+format_cache_gib = 2.0
+# The verdicts of checks that one team keeps, over every checkpoint, format and option. Past it the
+# oldest go first, and a format that lost its verdict reads as not checked.
+kept_verdicts = 64
+
+[accepts.formats]
+cache_gib = { minimum = 0.0 }
+format_cache_gib = { minimum = 0.0 }
+kept_verdicts = { minimum = 1 }

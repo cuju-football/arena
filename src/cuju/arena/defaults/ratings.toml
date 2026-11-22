@@ -1,0 +1,95 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The ratings of Evaluate, one table for each scenario, fitted from every result of the scenario.
+[ratings]
+# The method that ranks a table and seeds a draw, the name of a rating method. "points" is the
+# Elo rule match by match, in the order the results were kept. "bradley_terry" fits every result
+# of the table at once. A plugin adds methods, named as its identifier, a dot and the name. A
+# table always holds the rating of each model by the first two.
+method = "points"
+# The difficulty of the built-in AI that is the anchor of every table, from 0 to 1. The anchor
+# stands at a rating of 1000 by both methods, and every other rating reads against it.
+anchor = 0.6
+# The sources whose results count, "tournament" for the matches of a draw, "rating" for the
+# matches of a rating run, "evaluation" for the matches of an evaluation and "match" for the
+# requested matches.
+sources = ["tournament", "rating", "evaluation", "match"]
+# The evidence rule, the name of a plugin of the kind evidence, which keeps the results that count
+# once the arena has dropped duplicates, matches of one model against itself and unfinished
+# matches. "default" keeps the results of the sources above.
+rule = "default"
+# The confidence of the interval of a rating.
+confidence = 0.95
+
+# The evidence that a model needs before it counts as rated, which a tournament seeded by rating
+# asks of each entrant.
+[ratings.evidence]
+# The matches of the model on the scenario, at least.
+matches = 4
+# The matches against the anchor among them, at least.
+anchor_matches = 2
+# The width of the interval of its rating at most, from its lower to its upper bound in rating
+# points, "none" for any width.
+width = "none"
+
+# A rating run, which gathers evidence for chosen models on one scenario.
+[ratings.run]
+# How the matches play. "batched" plays every match of the run at once, the matches of each
+# pair in one batch, which needs models that play in a batch, the built-in AI. "on_demand"
+# starts a few matches at a time and picks each next pairing where the order is least settled.
+# "auto" takes batched where every model of the run is the built-in AI, and on demand otherwise.
+mode = "auto"
+# The matches that each measured model plays, which also sets the most matches of a run on
+# demand, the measured models times this number.
+matches = 8
+# The matches of each measured model against the anchor, which come before any other match.
+anchor_matches = 2
+# The matches at once on demand.
+at_once = 2
+# The most matches on demand, "none" for the measured models times matches.
+most = "none"
+# The confidence at which two models count as settled, from 0.5 to below 1. A run on demand
+# ends once every pair is settled. "none" plays the most matches.
+settle = 0.9
+# The seed of the run, which orders its pairings and seeds its matches, "none" for one drawn
+# anew, so two runs never play the same match twice.
+seed = "none"
+# The pairing rule of a run on demand, the name of a plugin of the kind pairing. "least_settled"
+# picks each next pairing where the order of the ratings is least settled.
+pairing = "least_settled"
+# The device of the batches, "cpu" or "cuda".
+device = "cpu"
+# The CPU threads of a batch, 0 for one for each processor.
+threads = 0
+# The matches drawn as recordings once the run has ended, by the rule of the evaluations,
+# "nothing", "all", "wins", "draws" or "losses" of the home side, "goals" for those with a
+# goal, the word first, a colon and a count, or the word worst, a colon and a count. Every
+# other match keeps its seed and its actions, from which it can be drawn later.
+keep = "nothing"
+# The recordings drawn at most.
+limit = 32
+
+[accepts.ratings]
+method = { type = "string" }
+rule = { type = "string" }
+anchor = { type = "number", minimum = 0, maximum = 1 }
+sources = { type = "list", items = { choices = ["tournament", "rating", "evaluation", "match"] } }
+confidence = { minimum = 0.5, maximum = 0.9999 }
+
+[accepts.ratings.evidence]
+matches = { minimum = 0, maximum = 10000 }
+anchor_matches = { minimum = 0, maximum = 10000 }
+width = { type = "number", minimum = 1, choices = ["none"] }
+
+[accepts.ratings.run]
+mode = { choices = ["auto", "batched", "on_demand"] }
+pairing = { type = "string" }
+matches = { minimum = 1, maximum = 1000 }
+anchor_matches = { minimum = 0, maximum = 1000 }
+at_once = { minimum = 1, maximum = 8 }
+most = { type = "integer", minimum = 1, maximum = 100000 }
+settle = { type = "number", minimum = 0.5, maximum = 0.9999, choices = ["none"] }
+seed = { type = "integer", minimum = 0, maximum = 2147483647, choices = ["none"] }
+device = { choices = ["cpu", "cuda"] }
+threads = { minimum = 0 }
+limit = { minimum = 1 }

@@ -1,0 +1,10 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The plugins that the arena finds, by entry points and in the plugins folder of its home.
+[plugins]
+# The names of the plugins that stay off, each the id of a plugin as `cuju arena plugin list`
+# shows it. A plugin on this list is found and listed as disabled, and no context can choose it.
+disabled = []
+
+[accepts.plugins]
+disabled = { type = "list", items = { type = "string" } }

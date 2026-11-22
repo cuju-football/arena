@@ -1,0 +1,11 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The teams of the registry.
+[teams]
+# The checkpoints that a team keeps, the current one and the earlier ones. A new checkpoint over
+# this number drops the oldest one that is not pinned. A pinned checkpoint is never dropped, and
+# the ratings of a dropped one stay in the tables.
+checkpoints = 8
+# The mebibytes that the files of all the checkpoints of a team may take, which drops the oldest
+# one that is not pinned in the same way. The current checkpoint always stays.
+checkpoint_mib = 500

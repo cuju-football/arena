@@ -1,0 +1,39 @@
+# The defaults of the arena, one file for each table, each file named after its table. This file
+# comes first by name, so it tells how every file of the folder is read.
+#
+# cuju.arena.config lays the files of this folder, then arena.toml of the arena's home folder,
+# then the files of CUJU_ARENA_CONFIG, then the files that a call or a command names, then the
+# overrides, such as recorder.every=4. A later file names only what it changes. A table of a later
+# file changes the keys that it names. A list of tables replaces the list of the defaults, and
+# each of its entries takes the keys that it leaves out from the first entry of the defaults. A
+# key that can be unset takes the text "none", since TOML has no empty value. An unknown key is
+# refused with the keys of its table, and so is a table that the arena does not hold, such as one
+# of the renderer, whose files are its own.
+#
+# The table accepts holds the rules of the keys whose default leaves open what they accept. A key
+# without a rule accepts values of the kind of its default. A rule may hold type, one of string,
+# integer, number, boolean, list, table and any, then choices, the values accepted beside the
+# type, then minimum and maximum for a number, then items, the rule of each entry of a list. A
+# rule with choices and no type accepts the choices alone. The key "*" of a table of rules holds
+# the rule of every key that the defaults leave out, which opens the table to such keys.
+
+# The annotations that a recorder and a live source keep of a step.
+[annotations]
+# The likely actions kept of the probabilities of a step, a count or "all".
+probabilities = 3
+# The named values kept of one player at one step, at most.
+max_values = 16
+# The view of grids and targets, "agent" as the observation of the agent shows the pitch, or
+# "pitch" as the recording shows it.
+perspective = "agent"
+# The cells of one grid at most, 96 by 72.
+grid_cells = 6912
+# The steps from one kept grid to the next, 1 for a grid at every step.
+grid_every = 1
+
+[accepts.annotations]
+probabilities = { type = "integer", minimum = 1, choices = ["all"] }
+max_values = { minimum = 1, maximum = 16 }
+perspective = { choices = ["agent", "pitch"] }
+grid_cells = { minimum = 1, maximum = 6912 }
+grid_every = { minimum = 1 }

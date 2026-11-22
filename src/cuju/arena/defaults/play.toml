@@ -1,0 +1,12 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+[play]
+# The scenario of a requested match.
+scenario = "11_vs_11_kaggle"
+# A fixed seed, or "none" to draw a new one.
+seed = "none"
+# The right team of a requested match.
+right = "builtin"
+
+[accepts.play.seed]
+type = "integer"

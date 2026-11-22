@@ -1,0 +1,26 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The academy benchmark of one model. The model, its name, its agents, its device and the options
+# of its batches are those of the table evaluate.
+[benchmark]
+# The academy tasks, "all" or a list of their identifiers, such as corner.
+tasks = "all"
+# Whether the library keeps the attempts as recordings, drawn after play.
+keep_recordings = false
+# The runs of a team of the registry played at once, from 1 to 8, or "auto" for one for every
+# four processors. A policy that plays in a batch plays every attempt of a task at once.
+workers = "auto"
+# The submission format that the teams of the benchmark play under, "open" for Kaggle open, as every match
+# played before formats, or the identifier of a format, such as kaggle/1, which turns Kaggle's
+# timing on, or strict/1.
+format = "open"
+# The preset of that format, "none" for the format's own defaults.
+format_preset = "none"
+# The options of that format, laid over its preset.
+format_options = {}
+
+[accepts.benchmark]
+tasks = { type = "list", items = { type = "string" }, choices = ["all"] }
+workers = { type = "integer", minimum = 1, maximum = 8, choices = ["auto"] }
+format = { type = "string" }
+format_preset = { type = "string" }

@@ -1,0 +1,18 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The thresholds of the policy signals that a search of moments finds.
+[search]
+# A value drop counts when a named value falls by this much within the window.
+value_drop = 0.3
+# The window of a value drop, in seconds.
+window = 2.0
+# A surprise counts when the chosen action had at most this probability.
+surprise = 0.1
+# The detectors of the catalog and of the policy signal queries.
+detectors = ["cuju", "value_drop", "surprise", "entropy"]
+
+[accepts.search]
+value_drop = { minimum = 0.0 }
+window = { minimum = 0.0 }
+surprise = { minimum = 0.0, maximum = 1.0 }
+detectors = { type = "list", items = { type = "string" } }

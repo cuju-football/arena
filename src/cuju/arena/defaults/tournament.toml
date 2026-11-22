@@ -1,0 +1,12 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# What a tournament takes where its own configuration names no such key.
+[tournament]
+# What a tournament whose draw the ratings seed does when an entrant lacks the evidence that
+# [ratings.evidence] asks. "refuse" makes no tournament and names who lacks what. "collect"
+# opens the tournament with a seeding phase, a rating run that gathers the evidence first.
+# "proceed" seeds the draw with the ratings as they stand and marks the entrants that lack.
+evidence = "refuse"
+
+[accepts.tournament]
+evidence = { choices = ["refuse", "collect", "proceed"] }

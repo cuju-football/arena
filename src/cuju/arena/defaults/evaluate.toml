@@ -1,0 +1,155 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# An evaluation run, the matches of one policy against each of its opponents.
+[evaluate]
+# The name of the model on the dashboard and in the ratings, "none" for the policy's own name.
+name = "none"
+# The series that the dashboard joins, such as a training run, "none" for none.
+run = "none"
+# The place of this evaluation in its series, an identifier, a step or a table of id, label and
+# step, "none" for none.
+checkpoint = "none"
+# The policy for the command line and the server. It is "builtin", or the word team, a colon and
+# the identifier of a team of the registry, or a module, a colon and a function of it, which is
+# called with policy_options and returns the policy.
+policy = "none"
+# The keyword arguments of the function that policy names.
+policy_options = {}
+# How the policy is called. "batch" calls it once a step with the observation of every match and
+# the batch. "kaggle" calls it as a Kaggle agent, once a step for each match.
+interface = "batch"
+# The scenario, without agent counts.
+scenario = "11_vs_11_kaggle"
+# The players that the policy controls, as the agent counts of the engine take them. A team of
+# the registry and the built-in AI bring their own.
+agents = 1
+# The difficulty of the built-in AI on the side of the policy, which plays its other players,
+# from 0 to 1, "none" for the scenario's.
+difficulty = "none"
+# The matches against each opponent, one environment each.
+episodes = 100
+# The seed of the batches. Match k against every opponent plays index k of the seed rule.
+seed = 1000003
+# The device of the batches, "cpu" or "cuda".
+device = "cpu"
+# The CPU threads of a batch, 0 for one for each processor.
+threads = 0
+# "left" plays each seed with the policy on the left, "both" plays it from each side in turn.
+sides = "left"
+# How the matches play. "batched" plays every match against an opponent at once in one batch,
+# which needs a policy and opponents that play in a batch. "on_demand" starts a few matches at a
+# time and picks each next opponent where the order of the ratings is least settled. "auto"
+# takes batched where the policy and every opponent can, and on demand otherwise.
+mode = "auto"
+# The matches at once on demand. A policy given as a Python function plays one at a time.
+at_once = 1
+# The most matches on demand, "none" for the episodes against every opponent.
+most = "none"
+# The confidence at which the policy and an opponent count as settled, from 0.5 to below 1. On
+# demand, an opponent that is settled plays no more. "none" plays the most matches.
+settle = 0.9
+# The pairing rule on demand, the name of a plugin of the kind pairing. "least_settled" picks
+# each next opponent where the order of the ratings is least settled.
+pairing = "least_settled"
+# Whether the matches are evidence for the ratings of the scenario, for a team, the built-in AI
+# and a policy with a name.
+rate = true
+# The submission format that every team plays under, "open" for Kaggle open, as every match
+# played before formats, or the identifier of a format, such as kaggle/1, which turns Kaggle's
+# timing on, or strict/1.
+format = "open"
+# The preset of that format, "none" for the format's own defaults.
+format_preset = "none"
+# The options of that format, laid over its preset.
+format_options = {}
+
+# Any option of BatchEnvironment, so the evaluation sees what training saw.
+[evaluate.batch]
+# The observation that the policy receives.
+representation = "simple115v2"
+
+# The opponents, each the built-in AI at a difficulty or a team of the registry.
+[[evaluate.opponents]]
+# "builtin" for the built-in AI, or "team" for a team of the registry.
+kind = "builtin"
+# The difficulty of the built-in AI of the opponent's side, from 0 to 1, "none" for the
+# scenario's.
+difficulty = 0.05
+# The identifier of the team, for the kind "team".
+team = "none"
+
+[[evaluate.opponents]]
+# The built-in AI again.
+kind = "builtin"
+# The difficulty of a medium opponent.
+difficulty = 0.6
+
+[[evaluate.opponents]]
+# The built-in AI once more.
+kind = "builtin"
+# The difficulty of the hardest opponent.
+difficulty = 1.0
+
+# The matches kept as recordings, drawn after play from their seeds and actions.
+[evaluate.record]
+# The matches kept, "all", "nothing", "losses", "draws", "wins", "goals" for those with a goal,
+# the word first, a colon and a count for the first so many, or the word worst, a colon and a
+# count for the worst by goal difference.
+keep = "losses"
+# The recordings kept at most.
+limit = 32
+# Whether a kept recording carries the extras of the policy as annotations.
+annotations = true
+# The megabytes of extras held during play at most, in half precision. Extras beyond are left
+# out and counted.
+extras_mb = 256
+# Whether the kept matches are drawn in a process of their own while the call returns. With
+# false the call returns once they are drawn.
+background = true
+
+# The statistics of the evaluation.
+[evaluate.stats]
+# The matches whose recordings give possession, passes and shots, "recorded" for the kept ones
+# or "all", which draws every match in the background.
+episodes = "recorded"
+# The confidence of the interval of the win rate and of the goal difference.
+confidence = 0.95
+# The resamples of the bootstrap of the goal difference.
+resamples = 1000
+
+[accepts.evaluate]
+name = { type = "string" }
+run = { type = "string" }
+checkpoint = { type = "any" }
+policy = { type = "string" }
+interface = { choices = ["batch", "kaggle"] }
+agents = { minimum = 0, maximum = 11 }
+difficulty = { type = "number", minimum = 0, maximum = 1 }
+episodes = { minimum = 1, maximum = 100000 }
+seed = { minimum = 0, maximum = 4294967295 }
+threads = { minimum = 0 }
+sides = { choices = ["left", "both"] }
+mode = { choices = ["auto", "batched", "on_demand"] }
+at_once = { minimum = 1, maximum = 8 }
+most = { type = "integer", minimum = 1 }
+settle = { type = "number", minimum = 0.5, maximum = 0.9999, choices = ["none"] }
+pairing = { type = "string" }
+format = { type = "string" }
+format_preset = { type = "string" }
+
+[accepts.evaluate.batch]
+"*" = { type = "any" }
+
+[accepts.evaluate.opponents]
+kind = { choices = ["builtin", "team"] }
+difficulty = { type = "number", minimum = 0, maximum = 1, choices = ["none"] }
+team = { type = "string" }
+
+[accepts.evaluate.record]
+limit = { minimum = 1 }
+extras_mb = { minimum = 0 }
+
+[accepts.evaluate.stats]
+episodes = { choices = ["recorded", "all"] }
+confidence = { minimum = 0.5, maximum = 0.9999 }
+resamples = { minimum = 0, maximum = 100000 }

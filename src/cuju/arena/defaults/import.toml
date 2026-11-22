@@ -1,0 +1,35 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The import of GRF dumps, Kaggle episodes, action logs of cuju and recording files.
+[import]
+# "auto" plays a file's match again in cuju and keeps it exact when every step equals the file,
+# else keeps its positions. "exact" refuses a file that does not play again exactly, and
+# "positions" keeps the positions of every file without playing it again.
+fidelity = "auto"
+# The device of the batch that plays a match again, "cpu" or "cuda", which give the same steps.
+device = "cpu"
+# The folder of the library that takes the imported recordings, "" for the top.
+folder = "Imported"
+# The title of each imported recording, "none" for the name of its file.
+title = "none"
+# The environments of an action log to record, "all" or a list of their indices.
+environments = "all"
+# The largest file that an import reads, in bytes, within the 110 MiB that a request to the
+# server may carry.
+max_bytes = 104857600
+# The files of one import at most, and the imports that the server keeps waiting or running.
+max_files = 16
+# The recordings that one file may give at most, as the episodes of an action log.
+max_recordings = 64
+# The seconds that one import of the server may run before it is stopped.
+timeout = 1800
+
+[accepts.import]
+fidelity = { choices = ["auto", "exact", "positions"] }
+device = { choices = ["cpu", "cuda"] }
+title = { type = "string" }
+environments = { type = "list", items = { type = "integer", minimum = 0 }, choices = ["all"] }
+max_bytes = { minimum = 1 }
+max_files = { minimum = 1 }
+max_recordings = { minimum = 1 }
+timeout = { minimum = 1 }

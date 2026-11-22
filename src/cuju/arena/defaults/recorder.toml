@@ -1,0 +1,25 @@
+# The top of annotations.toml tells how the files of this folder are read.
+
+# The recordings that a recorder saves of the episodes of an environment.
+[recorder]
+# The episodes to save, "all", "goals" for those with a goal, or a query of the moments language.
+keep = "all"
+# Saves the first episode and every this many after it, counting every episode that ends.
+every = 1
+# Saves only the episodes whose summed reward is at least this, "none" for every reward.
+min_reward = "none"
+# The version of the recording files, 2, or 1 for the readers of cuju 0.2.0.
+version = 2
+# GRF's raw fields of every player for the inspector, true, false, or "auto", which keeps them
+# when the batch has raw observations.
+inspector = "auto"
+# What a capture reads. "state" reads the state at every step. "actions" keeps the actions alone,
+# and the writer plays the episode again from its seed once it ends.
+capture = "state"
+
+[accepts.recorder]
+every = { minimum = 1 }
+min_reward = { type = "number" }
+version = { choices = [1, 2] }
+inspector = { choices = ["auto", true, false] }
+capture = { choices = ["state", "actions"] }
