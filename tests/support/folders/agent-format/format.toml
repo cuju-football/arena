@@ -1,0 +1,18 @@
+# A format of the tests whose entry is agent.py, as a course's arena asks, with no main.py.
+contract = 1
+requires = ">=0.1"
+name = "Agent file"
+version = "1"
+script = "format.py"
+summary = "Plays the function agent of agent.py, and refuses a folder without the file."
+
+[process]
+threads = 1
+match_minutes = 60
+
+[options.level]
+type = "int"
+default = 1
+range = [1, 9]
+label = "Level"
+per_entrant = true

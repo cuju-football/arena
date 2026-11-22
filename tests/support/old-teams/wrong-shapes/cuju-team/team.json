@@ -1,0 +1,1 @@
+{"id": "t-20261118-013914-9c90", "name": "Redwood", "kind": "kaggle", "created": "2026-11-18T01:39:14", "format": "5v5", "style": [1], "model": "model.glb", "control": {"players": 4, "assignment": "dynamic", "selection": [], "goalkeeper": "scenario", "action_set": "default"}}

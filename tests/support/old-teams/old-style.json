@@ -1,0 +1,92 @@
+{
+  "comment": "The style of a team of cuju-render 0.1.0 as the header of an old recording carries it, with a fantasy character, a model of its own, an uploaded clip, pairs of colors, fans' colors and models without numbers. unread lists the entries of the style that this version no longer reads. tests/web/old_styles.mjs reads it.",
+  "team": {
+    "name": "Redwood",
+    "style": {
+      "model": "kaykit-knight",
+      "kit": {
+        "pattern": "stripes",
+        "primary": [
+          214,
+          48,
+          49
+        ],
+        "secondary": [
+          255,
+          255,
+          255
+        ],
+        "shorts": [
+          20,
+          20,
+          20
+        ],
+        "socks": [
+          214,
+          48,
+          49
+        ]
+      },
+      "badge": "RDW",
+      "number": "secondary",
+      "players": [
+        {
+          "name": "Keeper",
+          "number": 1,
+          "skin": "tan",
+          "model": "grf",
+          "celebration": "team"
+        },
+        {
+          "name": "Playmaker",
+          "number": 10,
+          "hair": "long01",
+          "model": "custom",
+          "celebration": "upload:wave.0"
+        },
+        {
+          "name": "Striker",
+          "number": 9,
+          "model": "kaykit-ranger",
+          "celebration": "clip:Cheering"
+        }
+      ],
+      "celebrations": [
+        "knee_slide",
+        "upload:wave.0"
+      ],
+      "colors": {
+        "custom": {
+          "#ff0000": "#00ff00"
+        }
+      },
+      "crowd": {
+        "colors": [
+          [
+            214,
+            48,
+            49
+          ],
+          [
+            20,
+            20,
+            20
+          ]
+        ]
+      },
+      "hidden_numbers": [
+        "custom",
+        "kaykit-knight"
+      ]
+    }
+  },
+  "unread": [
+    "colors",
+    "crowd",
+    "hidden_numbers"
+  ],
+  "removed_models": [
+    "kaykit-knight",
+    "kaykit-ranger"
+  ]
+}

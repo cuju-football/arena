@@ -1,0 +1,1 @@
+A folder of sample submissions for the tests of add-folder and check.

@@ -1,0 +1,25 @@
+# A format of the safety tests. It plays a Kaggle main.py and breaks a ceiling on request.
+contract = 1
+requires = ">=0.1"
+name = "Safety"
+version = "1"
+script = "format.py"
+summary = "Plays a Kaggle main.py, and breaks a ceiling of the renderer as its mode asks."
+
+[process]
+threads = 1
+memory_mib = 1024
+match_minutes = 60
+env = ["SAFETY_SECRET", "SAFETY_TORCH"]
+
+[options.mode]
+type = "choices"
+choices = ["play", "spawn", "helper", "children", "memory", "threads", "report"]
+default = "play"
+label = "Mode"
+
+[options.after]
+type = "int"
+default = 2
+range = [-1, 100000]
+label = "Steps before the mode"

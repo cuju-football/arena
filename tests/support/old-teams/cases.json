@@ -1,0 +1,202 @@
+{
+  "comment": "Teams of cuju-render 0.1.0 and what reading them gives. The folders plain, full and builtin and the zips of exports were written by the code of the tag v0.1.0. The others are the team file of full with values broken by hand. entry holds dotted paths into the entry that the page reads, the registry's identity with the look that the look store takes over into cuju-look, set_aside the paths that the reading and the takeover refused, set_aside_after those that a second read still names, none where it is absent, kept dotted paths into the block kept of the team file that the next save writes, and look_kept those of the look file.",
+  "teams": [
+    {
+      "folder": "plain",
+      "entry": {
+        "name": "Plain FC",
+        "format": "11v11",
+        "style.kit.pattern": "plain",
+        "style.kit.primary": [214, 48, 49],
+        "style.model": "grf",
+        "style.players.10.number": 11,
+        "bodies": []
+      },
+      "files": [],
+      "set_aside": [],
+      "kept": {
+        "style.crowd": {"colors": [[214, 48, 49], [255, 255, 255]]},
+        "style.colors": {},
+        "style.hidden_numbers": []
+      },
+      "look_kept": {}
+    },
+    {
+      "folder": "full",
+      "entry": {
+        "name": "Redwood",
+        "format": "5v5",
+        "created": "2026-11-18T01:39:14",
+        "control.players": 4,
+        "style.kit": {"pattern": "stripes", "primary": [214, 48, 49], "secondary": [255, 255, 255], "shorts": [20, 20, 20], "socks": [214, 48, 49]},
+        "style.goalkeeper.primary": [241, 210, 27],
+        "style.badge": "RDW",
+        "style.number": "secondary",
+        "style.model": "grf",
+        "style.celebrations": ["knee_slide", "upload:wave.0"],
+        "style.players.0": {"name": "Keeper", "number": 1, "skin": "tan", "hair": "grf", "hair_color": "grf", "model": "grf", "celebration": "team", "pose": "auto"},
+        "style.players.1": {"name": "Playmaker-v3", "number": 10, "skin": "grf", "hair": "long01", "hair_color": "red", "model": "custom", "celebration": "upload:wave.0", "pose": "auto"},
+        "style.players.2.model": "team",
+        "bodies.0.id": "custom",
+        "bodies.0.file": "bodies/custom.glb",
+        "images": ["print"]
+      },
+      "files": ["shirt-front.png", "bodies/custom.glb"],
+      "set_aside": ["style.model", "style.players.2.model"],
+      "kept": {
+        "style.crowd": {"colors": [[214, 48, 49], [20, 20, 20], [255, 255, 255]]},
+        "style.colors": {"custom": {"#ff0000": "#00ff00"}},
+        "style.hidden_numbers": ["custom", "kaykit-knight"]
+      },
+      "look_kept": {
+        "refused": {"style.model": "kaykit-knight", "style.players.2.model": "kaykit-ranger"}
+      }
+    },
+    {
+      "folder": "broken-kit",
+      "entry": {
+        "name": "Redwood",
+        "style.kit": {"pattern": "stripes", "primary": [214, 48, 49], "secondary": [255, 255, 255], "shorts": [20, 20, 20], "socks": [214, 48, 49]},
+        "style.badge": "RDW",
+        "style.players.1.name": "Playmaker-v3"
+      },
+      "set_aside": ["style.kit.primary", "style.model", "style.players.2.model"],
+      "kept": {
+        "style.crowd": {"colors": [[214, 48, 49], [20, 20, 20], [255, 255, 255]]}
+      },
+      "look_kept": {
+        "refused": {"style.kit.primary": [300, 0, 0], "style.model": "kaykit-knight", "style.players.2.model": "kaykit-ranger"}
+      }
+    },
+    {
+      "folder": "removed-model",
+      "entry": {
+        "name": "Redwood",
+        "style.model": "grf",
+        "style.kit.pattern": "stripes",
+        "style.kit.shorts": [20, 20, 20],
+        "style.badge": "RDW",
+        "style.players.1.name": "Playmaker-v3",
+        "style.players.2": {"name": "Striker", "number": 9, "skin": "grf", "hair": "grf", "hair_color": "grf", "model": "team", "celebration": "team", "pose": "auto"}
+      },
+      "set_aside": ["style.model", "style.players.2.model"],
+      "kept": {
+        "style.model": "kaykit-dragon"
+      },
+      "look_kept": {
+        "refused": {"style.model": "kaykit-dragon", "style.players.2.model": "kaykit-wizard"}
+      }
+    },
+    {
+      "folder": "broken-many",
+      "entry": {
+        "name": "t-broken-many",
+        "created": "",
+        "format": "11v11",
+        "control": {"players": 1, "assignment": "dynamic", "selection": [], "goalkeeper": "scenario", "action_set": "default"},
+        "style.kit": {"pattern": "plain", "primary": [214, 48, 49], "secondary": [255, 255, 255], "shorts": [20, 20, 20], "socks": [214, 48, 49]},
+        "style.goalkeeper": {"primary": [46, 204, 113], "secondary": [20, 20, 20], "shorts": [20, 20, 20], "socks": [46, 204, 113]},
+        "style.celebrations": ["knee_slide"],
+        "style.players.0.name": "Keeper",
+        "style.players.0.skin": "grf",
+        "style.players.1.name": "Playmaker-v3",
+        "style.players.1.number": 2,
+        "style.players.1.model": "team",
+        "bodies": [],
+        "style.players.10.number": 11,
+        "style.badge": "RDW"
+      },
+      "set_aside": ["control", "created", "format", "model.joints", "name", "style.celebrations.1", "style.goalkeeper.primary", "style.kit.pattern", "style.model", "style.players.0.skin", "style.players.1.model", "style.players.1.number", "style.players.2.model"],
+      "kept": {
+        "season": "2026",
+        "style.sleeves": "long",
+        "refused": {"control": {"players": "all"}, "created": 5, "format": [], "name": 7, "style.players.1.number": 120}
+      },
+      "look_kept": {
+        "refused": {"model.joints": {"body": "mixamorig:Hips"}, "style.celebrations.1": "Bad Name!", "style.goalkeeper.primary": "yellow", "style.kit.pattern": "zigzag", "style.model": "kaykit-knight", "style.players.0.skin": "green", "style.players.1.model": "custom", "style.players.2.model": "kaykit-ranger"}
+      },
+      "set_aside_after": ["control", "created", "format", "name", "style.players.1.number"]
+    },
+    {
+      "folder": "wrong-shapes",
+      "entry": {
+        "name": "Redwood",
+        "format": "5v5",
+        "control.players": 4,
+        "style.kit.pattern": "plain",
+        "style.players.0.name": "",
+        "bodies": []
+      },
+      "set_aside": ["model", "style"],
+      "kept": {
+        "refused": {"style": [1]},
+        "model": "model.glb"
+      },
+      "look_kept": {
+        "refused": {"model": "model.glb", "style": [1]}
+      },
+      "set_aside_after": ["style"]
+    },
+    {
+      "folder": "unreadable",
+      "entry": {
+        "name": "t-unreadable",
+        "format": "11v11",
+        "style.kit.primary": [214, 48, 49]
+      },
+      "set_aside": ["team.json"],
+      "kept": {},
+      "rejected": "{\"name\": \"Half",
+      "look_kept": {},
+      "set_aside_after": ["team.json"]
+    },
+    {
+      "folder": "builtin",
+      "builtin": true,
+      "entry": {
+        "name": "House AI",
+        "kind": "builtin",
+        "style.kit.primary": [9, 132, 227],
+        "style.badge": "AI",
+        "style.number": "black",
+        "ground": null
+      },
+      "set_aside": [],
+      "kept": {
+        "style.crowd": {"colors": [[9, 132, 227], [255, 255, 255]]}
+      },
+      "look_kept": {}
+    }
+  ],
+  "exports": [
+    {
+      "zip": "full.zip",
+      "entry": {
+        "name": "Redwood",
+        "format": "5v5",
+        "control.players": 4,
+        "style.kit.pattern": "stripes",
+        "style.model": "grf",
+        "style.players.1.name": "Playmaker-v3",
+        "bodies.0.id": "custom",
+        "bodies.0.file": "bodies/custom.glb",
+        "images": ["print"]
+      },
+      "set_aside": ["style.model", "style.players.2.model"],
+      "kept": {
+        "style.crowd": {"colors": [[214, 48, 49], [20, 20, 20], [255, 255, 255]]}
+      },
+      "files": ["cuju-look/bodies/custom.glb", "cuju-look/look.json", "cuju-look/shirt-front.png", "cuju-team/clips/wave.glb", "cuju-team/clips/wave.json", "cuju-team/model.glb", "cuju-team/notes.txt", "cuju-team/presentation/audio/hum.js", "cuju-team/presentation/presentation.json", "cuju-team/presentation/shaders/blink.glsl", "cuju-team/presentation/worker.js", "cuju-team/shirt-front-edit.json", "cuju-team/shirt-front.png", "cuju-team/sound-goal.wav", "cuju-team/sound-kick.wav", "cuju-team/sponsor-1.png", "cuju-team/team.json", "main.py"]
+    },
+    {
+      "zip": "plain.zip",
+      "entry": {
+        "name": "Plain FC",
+        "format": "11v11",
+        "style.kit.primary": [214, 48, 49],
+        "bodies": []
+      },
+      "files": ["cuju-look/look.json", "cuju-team/team.json", "main.py"]
+    }
+  ]
+}

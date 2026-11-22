@@ -1,0 +1,38 @@
+# A format of the tests. It plays a Kaggle main.py as Kaggle open does, and fails on request.
+contract = 1
+requires = ">=0.1"
+name = "Probe"
+version = "1"
+script = "format.py"
+summary = "Plays a Kaggle main.py, and fails as its mode asks, for the tests of the hosts."
+
+[process]
+threads = 1
+match_minutes = 60
+
+[results]
+forfeit_score = [0, 3]
+
+[options.mode]
+type = "choices"
+choices = ["play", "stall", "spin", "exit", "format_error", "forfeit", "end_forfeit", "invalid", "load_stall", "child", "second"]
+default = "play"
+label = "Mode"
+
+[options.after]
+type = "int"
+default = 3
+range = [0, 100000]
+label = "Steps before the mode"
+
+[options.check_steps]
+type = "int"
+default = 0
+range = [0, 400]
+label = "Check steps"
+reaches = "check"
+
+[presets.quiet]
+label = "Quiet"
+mode = "play"
+after = 0
