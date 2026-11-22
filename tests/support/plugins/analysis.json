@@ -1,0 +1,117 @@
+{
+  "sample-5v5-a": {
+    "catalog": "29d2ef521306a8ab28cef661cd6d066792b22178c56381070b3514282a9ba389",
+    "listing": "226d9eb8a336e2570ec58d5576e02746b2e480394d8806c850cc3807b196be41",
+    "signal_moments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "signal_summary": "cdffd45c56f2c3a8029b29139c12e5ac05c4d3cae99c308e1a8fe6db3db1780d",
+    "statistics": "52d8c4ed701f037e2e0c0e28540204216854b4be6afccea14df6c1cb4aabe387",
+    "tables": {
+      "tracking.csv": "dc71695a9b097ff9b15fdc9fce7ff805e026a657b78d39854dd897d03d4ee65a",
+      "tracking.jsonl": "865176a1117bd94d12e5011b899424149aad5d6cfb841f4227de59fe079bfaea",
+      "tracking.parquet.input": "51cbc0ada266a84187c0b741a552515dc31dbc77d4b3cc49e74c89bd28a30d49",
+      "events.csv": "24d198cfc28cab7e3a3fcdaef2d86a329098a66ca65645e544324177bf3fb388",
+      "events.jsonl": "01a43f86cba675d5bb84fba1f77753916ccbe60d4fb6b576bb6897ad765dfe65",
+      "events.parquet.input": "7af57d16ba0978a11f65d7233dacdd501f10e618185b7a2188727eae6b171614",
+      "annotations.csv": "034a25e12d2f33dafb6fa7eea273de9b24962cdd5128b1934e5379196bea6844",
+      "annotations.jsonl": "16759b80fba016db1eb7df2d052cac128fe63d793b04da1bd7a072a566970389",
+      "annotations.parquet.input": "d7835335e6af6b4615682eab5e682bc7bea0d196570399e158a0f88fb782a323",
+      "metrica-home.csv": "94ff41ae6c48a6b7f5ddc05b898494815fb090769cac4ce4f9a2ebdcca9bef00",
+      "metrica-away.csv": "85c785f3ff85df9090ccf356d289a55f44927a0572c4fc6ac6b4e9011c91a036",
+      "secondspectrum-meta.xml": "2c48204ef4f27b064ca839ecb494988aa22943d1faa5545ceae9e1b2bca08a1c",
+      "secondspectrum-tracking.jsonl": "5de1f5d96213d5f42177926bae8cc703ff437ea5429b27b392cc48c7450bcdb8",
+      "metadata.json": "4549b21565fd96a8f48c74d1317487afbad0e15eafbd9c84c888971e8da668af"
+    }
+  },
+  "sample-5v5-b": {
+    "catalog": "d3544be236b36830e77309598914abfbecbd73ee6f5ef9d265f7402aeab2e506",
+    "listing": "3b185302e1036ea45cdf43fedd74eeebeac5efcfaeaa885186fbf7bed2547af7",
+    "signal_moments": "719b121a8ebbc4e499769b4f1016f2f07be52d5652b8acb0f34f49295370ff0f",
+    "signal_summary": "b60c6c37c9441d58b16dc8d3e55cf3e3fda2ceb6b50a6da715319b8e11d9fc22",
+    "statistics": "0f9d23805fa752e51a55fbdfb427f59890e09eb0eab6ca6dab49fceb486d721d",
+    "tables": {
+      "tracking.csv": "caf6bd6ad01052d7dcc83819e0a60c812b4c1e1991c4f587276dc75fa879a14c",
+      "tracking.jsonl": "2b56977683753bd9b6886ebe5f3ec60d59ee25aaed446d5ed86371c3fce9f087",
+      "tracking.parquet.input": "85346cf465e5eea5442d2847887010f46f44415889d4e1939254ab459d2eb46a",
+      "events.csv": "dd1f87a0e9cd6fd284fffe068a6696f16c5b370a4832d5ffaecd77c3003684e3",
+      "events.jsonl": "dc92ae79836df595b78a8c7d359ba3eb75a9bb4a86d3ea9e12d1879a152e37f1",
+      "events.parquet.input": "fdbbd7010230dae1a1d5ae703c20de39be2d5f045ed20ef74b6dc7a70868a1c8",
+      "annotations.csv": "1a705ac6a2648fa7c24b5badec89f148ea46f0fb2a9707833072acde413ffb23",
+      "annotations.jsonl": "9284757da808ce256f033e8a496a546347d4261f2c87488c63125b3d67e4ef60",
+      "annotations.parquet.input": "fdc5f7848cee85bf5aeb831d0ece210be8b0c8de5fd27cf3366ec37011bf4a5e",
+      "metrica-home.csv": "3a5ae82b1441a08277e1d753cf50d0214bb0a581ad23fd5fb65c3a71e86f2345",
+      "metrica-away.csv": "3c44dd34afcb41317bc7960c2f6fe2e8b996d882ff74a87019ad872eec8cd052",
+      "secondspectrum-meta.xml": "2c48204ef4f27b064ca839ecb494988aa22943d1faa5545ceae9e1b2bca08a1c",
+      "secondspectrum-tracking.jsonl": "c020c414d6a6f2c2eff3da1663cea792596630cfefacc94027ca51c9a3a53ab7",
+      "metadata.json": "a9488373e5a504e9e5494e17c35dc6ecbd25419f803d63a2282baa8dc39097e1"
+    }
+  },
+  "sample-11v11": {
+    "catalog": "78727292e1271266de31ac01cbe869791f4dc85b4c2391d9a8ca32db712d215e",
+    "listing": "93b133a1bbbe8b8bd21a84bbfdc0d847de552921c3ad5e4be21207b09d7f3ec3",
+    "signal_moments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "signal_summary": "a171aa843c1b3fe41229af1e3f1917678e75c29af7cf9c7084232e0bd8d33393",
+    "statistics": "c8c923cd33983f3dc15b8daf40bfed31ab8ce62c2378719f00679ede286e3ccc",
+    "tables": {
+      "tracking.csv": "82d474bcf965ca6d99d10b548e9cd1a61dd584e9e5611e1c1ada9a1663cc417e",
+      "tracking.jsonl": "a899e25d71fde85a4cd4c1069349075b5f3bbba0c8915e9a72af177763f94bcf",
+      "tracking.parquet.input": "8d5963847fc9a9edb61da48a711e4230bfdd74b41b09889606e4eaf585d9b8fe",
+      "events.csv": "54209ce37aefd64084d79fb951b1e70923a2c85b3a067ef4f00b356cd821a376",
+      "events.jsonl": "bc104f97eab8044d3a560201186e9417e65736d4eaf69d2befc423d9c4ef0309",
+      "events.parquet.input": "417291b179540571e0ac0fe30299552f4b3c04de0c04a8764709c4943555470a",
+      "annotations.csv": "ab017e2f6ec3c4e7d52dbd476539b282a2572c30b6dc9dfe2a0daebce15151fd",
+      "annotations.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "annotations.parquet.input": "af826259d01231f07155f2d9cbf48fd79e7b6705dc0565bd24c374929995bf13",
+      "metrica-home.csv": "102b4b0f0b0614021c03a498e12462a5a15766727e40a4a2f9fe37e4c9321910",
+      "metrica-away.csv": "8f49938258759ebea0f42614562f7f9d2ee43b4c522dacb49aa0f4b156156220",
+      "secondspectrum-meta.xml": "d0bba2585ce9ffb2183560681cb3140bdcee538a0adc995cd55dfa5edfd85609",
+      "secondspectrum-tracking.jsonl": "74ec297aec6463a6961d2a9ec9664bfd21afc59e97152148063e0f96b82043c9",
+      "metadata.json": "b45a9c445132530bff3399cd7606b8a6c8c35b3ecd492995f6c3f8c1bb934c4f"
+    }
+  },
+  "sample-5v5": {
+    "catalog": "1ae50fd68b11b1332860a6ee744e11c6954e634807251a70289c8641a4572e01",
+    "listing": "615d0c7f326bbd36747638c9ee955d65cbe2a7186b11f6d72a4feb5c739b80a4",
+    "signal_moments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "signal_summary": "a171aa843c1b3fe41229af1e3f1917678e75c29af7cf9c7084232e0bd8d33393",
+    "statistics": "d1a644d6e2b925898f9ea68654b0c0f4846bb173daf151900dca9ca163741c93",
+    "tables": {
+      "tracking.csv": "49108b13dc0a47fac547c19dcc30f8a6003d0f6a571e1ba0a19867770d895a0c",
+      "tracking.jsonl": "3a6f6195b51103e391a70381646328e4861084048563a52042c3288931741dcf",
+      "tracking.parquet.input": "2bbd14b5d78cd35c329b881b3f68d1a6e48debe1af81538c31214b7168fc6336",
+      "events.csv": "c3515334a1641ee64b90858d193efe8e33cf7f876a943709820bb14592a52193",
+      "events.jsonl": "c441dba476306ae6907742f92d7b629487159912bd4aef6c5efb053edc2eab41",
+      "events.parquet.input": "a36f2aa7fc983c4719319a35e849b4fa1d192d61132c291aae0da5f9525eca0f",
+      "annotations.csv": "ab017e2f6ec3c4e7d52dbd476539b282a2572c30b6dc9dfe2a0daebce15151fd",
+      "annotations.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "annotations.parquet.input": "af826259d01231f07155f2d9cbf48fd79e7b6705dc0565bd24c374929995bf13",
+      "metrica-home.csv": "931ae5c1fbdeb11cfbfc18afdbe2d7af41cd2c4ec9deb17f3271fccb528abe8c",
+      "metrica-away.csv": "5892a18e5c685ed9115f57313ed75897ec1d04a91d862e3129c0bed8dd4ff1c3",
+      "secondspectrum-meta.xml": "98c1830759b3f78ff3b6d847a184d628e612d0fe972e1df59d71397fd40168e2",
+      "secondspectrum-tracking.jsonl": "478d76d6ab12d6b3b6f15afb5ce677933527c1ff0e198616bc96c13abf3b2089",
+      "metadata.json": "6f5cb34022efa86c55146604cd29bb6252ddf105601e6e58edad040ad172a78a"
+    }
+  },
+  "sections-5v5": {
+    "catalog": "fbbae8f44d1c07719c2d98fb52234f5e01ee94ee5a935e30b725335df6a65952",
+    "listing": "95999fcde663bffafa8c8c78f53472b6d0c2d2d1775577fac3357bab7968362e",
+    "signal_moments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "signal_summary": "c2f0ac0aa7f5c46cea3932dc006ddff7da0cb2aad939ed9e172ed5007a262565",
+    "statistics": "dd49888774b47fde95400a9ab792e0d155f020452f7723ed71386da5468288a7",
+    "tables": {
+      "tracking.csv": "0d84b5b78b8eec417f2e1d10c473b97c583df7528695c2a76dbc607e2a2b0e6e",
+      "tracking.jsonl": "5f16840ecd94b744391a3b170f3def22cf7834a63ada8e18ce99eb4e5e175b42",
+      "tracking.parquet.input": "0c75de2c65888d5d2ea1ebdcbc4751c89bb3d48d99e42ed83ccf46f818746b0f",
+      "events.csv": "2ba832cef73a2e143f9da4a00ba09f9b03e753e6a2bcc6294636336c23494779",
+      "events.jsonl": "ef8c9d9d4c331e252dfed2830887fa853e12a59a56fd5a2043fe50dc3b80e1d5",
+      "events.parquet.input": "dba6d89e9145bdf4b3b67c7bf77c5acc47ed4fc0643da525ac7e1d449e4de3b8",
+      "annotations.csv": "2baa5c5729ac182d853ec85f80e6d87fdbd7b1ef31f7ebf4c01a2976d1a85e48",
+      "annotations.jsonl": "0e196de5f7c85139c773fc000f4b949f7c01bba1e5bc0b522347e3a4cd26b14c",
+      "annotations.parquet.input": "12230dad96c81f72463251be4ba64b56f93b4199343374dab36aaa6bfa312274",
+      "metrica-home.csv": "d53562c5f885b43b32a823d55d8dc39fcac7b6c21f1a0f47edc94369e03ae246",
+      "metrica-away.csv": "625af3717893911f699acb44e3abc9f0a4d7952e9ebf5392b269af933e8f012b",
+      "secondspectrum-meta.xml": "60e8080e491a1c02116ee96576e40e08cd1b403d73ff7d2d31f23851aec964f4",
+      "secondspectrum-tracking.jsonl": "76fa84271c8f8b272a24281a10933af635109ef98cc8dde47bc511e36622062b",
+      "metadata.json": "8f611294928dbec7ebd5d13d65bc3ea3b446d4d8517a75f72fa5fbfb45c2f71f"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+ "document": {
+  "tasks": [
+   "empty_goal_close",
+   "corner"
+  ],
+  "models": [
+   {
+    "team": "t-20261111-120000-aaaa",
+    "name": "Striker, \"the bold\""
+   },
+   {
+    "team": "builtin",
+    "name": "GRF's built-in AI",
+    "name_id": "server.names.builtin",
+    "name_values": {}
+   },
+   {
+    "team": "t-20261111-120000-bbbb",
+    "name": "Idle"
+   }
+  ],
+  "cells": [
+   {
+    "team": "t-20261111-120000-aaaa",
+    "task": "empty_goal_close",
+    "state": "done",
+    "attempts": 5,
+    "played": 5,
+    "value": 5,
+    "rate": 1.0,
+    "failed_attempts": 0,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   },
+   {
+    "team": "t-20261111-120000-aaaa",
+    "task": "corner",
+    "state": "done",
+    "attempts": 5,
+    "played": 5,
+    "value": 2,
+    "rate": 0.4,
+    "failed_attempts": 1,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   },
+   {
+    "team": "builtin",
+    "task": "empty_goal_close",
+    "state": "done",
+    "attempts": 5,
+    "played": 5,
+    "value": 4,
+    "rate": 0.8,
+    "failed_attempts": 0,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   },
+   {
+    "team": "builtin",
+    "task": "corner",
+    "state": "done",
+    "attempts": 5,
+    "played": 5,
+    "value": 1,
+    "rate": 0.2,
+    "failed_attempts": 0,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   },
+   {
+    "team": "t-20261111-120000-bbbb",
+    "task": "empty_goal_close",
+    "state": "failed",
+    "attempts": 5,
+    "played": 0,
+    "value": null,
+    "rate": null,
+    "failed_attempts": 0,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   },
+   {
+    "team": "t-20261111-120000-bbbb",
+    "task": "corner",
+    "state": "skipped",
+    "attempts": 5,
+    "played": 0,
+    "value": null,
+    "rate": null,
+    "failed_attempts": 0,
+    "playing": null,
+    "group": null,
+    "results": [],
+    "error": null,
+    "error_id": null,
+    "error_values": null
+   }
+  ],
+  "rows": [
+   {
+    "team": "t-20261111-120000-aaaa",
+    "name": "Striker, \"the bold\"",
+    "score": 70.0,
+    "done": 2,
+    "place": 1
+   },
+   {
+    "team": "builtin",
+    "name": "GRF's built-in AI",
+    "name_id": "server.names.builtin",
+    "name_values": {},
+    "score": 50.0,
+    "done": 2,
+    "place": 2
+   },
+   {
+    "team": "t-20261111-120000-bbbb",
+    "name": "Idle",
+    "score": 0.0,
+    "done": 0,
+    "place": 3
+   }
+  ],
+  "progress": 1.0
+ },
+ "csv": "model,team,empty_goal_close,corner,score,place\n\"Striker, \"\"the bold\"\"\",t-20261111-120000-aaaa,100.0,40.0,70.0,1\nGRF's built-in AI,builtin,80.0,20.0,50.0,2\nIdle,t-20261111-120000-bbbb,,,0.0,3\n"
+}
