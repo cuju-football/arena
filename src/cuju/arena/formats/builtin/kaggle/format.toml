@@ -1,0 +1,55 @@
+contract = 1
+name = "Kaggle"
+version = "1"
+script = "format.py"
+summary = "A main.py whose last callable is the agent, played as Kaggle's football environment plays it."
+
+# A built-in format may run in the match process. Kaggle open then plays through the code that
+# cuju-render always played teams with, and timed Kaggle starts the agent in a child process.
+[process]
+host = "match"
+gpu = "allowed"
+match_minutes = 90
+
+# Kaggle's own timing, from its football environment: 0.5 s for each step and a bank of 60 s of
+# overage, which each step slower than its time draws from. The agent forfeits when the bank runs
+# out. Timing is on when a context chooses Kaggle, and off in the preset Kaggle open.
+[options.players]
+label = "Players"
+type = "choices"
+choices = ["one", "control"]
+default = "one"
+
+[options.timing]
+label = "Timing"
+type = "bool"
+default = true
+
+[options.step_seconds]
+bounds = "step"
+label = "Each step"
+type = "float"
+default = 0.5
+range = [0.05, 1.1]
+unit = "s"
+
+[options.overage_seconds]
+bounds = "match"
+label = "Overage"
+type = "float"
+default = 60
+range = [0, 600]
+unit = "s"
+
+[options.load_seconds]
+label = "Loading"
+type = "float"
+default = 60
+range = [1, 600]
+unit = "s"
+
+# How cuju-render played every team before formats, with no timing and the team's own control.
+[presets.open]
+label = "Kaggle open"
+players = "control"
+timing = false

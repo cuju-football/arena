@@ -1,0 +1,98 @@
+contract = 1
+name = "Strict"
+version = "1"
+script = "format.py"
+summary = "A main.py in a process of its own under limits, with the strict/1 rules of earlier tournaments."
+
+# Built in, in the match process, where the workers of strict/1 rules start their own processes
+# and play unchanged. A match is cut by the rules of this format long before the ceiling of 360
+# minutes, whatever the limit of the compute time of a match.
+[process]
+host = "match"
+gpu = "allowed"
+match_minutes = 360
+check_minutes = 120
+
+# No forfeit score is stated, so a context records its own, as a tournament of strict/1 rules
+# always did with its forfeit score.
+[results]
+evidence = true
+
+# The limits and switches of strict/1 rules with their defaults and ranges, as the tournaments of
+# earlier versions stored them. A tournament that stored limits plays under the same values.
+[options.threads]
+type = "int"
+default = 1
+range = [1, 64]
+label = "Threads"
+
+[options.load_seconds]
+type = "float"
+default = 30
+range = [1, 600]
+unit = "s"
+label = "Loading"
+
+[options.first_call_seconds]
+type = "float"
+default = 10
+range = [0.1, 600]
+unit = "s"
+label = "First call"
+
+[options.call_seconds]
+type = "float"
+default = 1
+range = [0.01, 60]
+unit = "s"
+label = "Each later call"
+
+[options.reset_seconds]
+type = "float"
+default = 5
+range = [0.1, 600]
+unit = "s"
+label = "Reset"
+
+[options.mean_call_ms]
+type = "float"
+default = 20
+range = [0.1, 10000]
+unit = "ms"
+label = "Mean call"
+
+[options.folder_mb]
+type = "float"
+default = 100
+range = [1, 10000]
+unit = "MiB"
+label = "Folder"
+
+[options.memory_mb]
+type = "float"
+default = 2048
+range = [64, 65536]
+unit = "MiB"
+label = "Memory"
+
+[options.match_seconds]
+type = "float"
+default = 120
+range = [1, 36000]
+unit = "s"
+label = "Compute per match"
+
+[options.frozen]
+type = "bool"
+default = true
+label = "Read-only copy"
+
+[options.gpu]
+type = "bool"
+default = false
+label = "GPU"
+
+[options.deterministic]
+type = "bool"
+default = false
+label = "Same actions twice, a rule"
