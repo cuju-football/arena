@@ -1,0 +1,7 @@
+# The declaration of the example plugin of docs/plugins.md, a rating method of its own.
+id = "goals"
+version = "1.0"
+requires = ">=0.1.0"
+
+[provides]
+"rating_method/1" = ["rating"]

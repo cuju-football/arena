@@ -1,0 +1,8 @@
+# The declaration of the example plugin of docs/plugins.md, a stage type and a tiebreaker.
+id = "finale"
+version = "1.0"
+requires = ">=0.1.0"
+
+[provides]
+"stage_type/1" = ["league_final"]
+"tiebreaker/1" = ["clean_sheets"]
