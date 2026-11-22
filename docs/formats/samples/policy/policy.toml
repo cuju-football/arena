@@ -1,0 +1,5 @@
+model = "model.pt"
+representation = "simple115v2"
+stacked = true
+sample = false
+device = "cpu"

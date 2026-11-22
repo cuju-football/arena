@@ -1,0 +1,24 @@
+# The Policy format, an example for the guide on writing a format. One trained network plays the
+# active player, over a representation that gfootball gives. It is added by a person.
+contract = 1
+requires = ">=0.1.0"
+name = "Policy"
+version = "1"
+script = "format.py"
+summary = "One trained policy for the active player, a TorchScript or ONNX file over a gfootball representation."
+
+# One process for the run, so a model loads and warms up once, with a cache kept between runs.
+# A policy.toml that asks for cuda needs a visible GPU, which gpu = "allowed" lets the process see.
+[process]
+threads = 1
+gpu = "allowed"
+scope = "run"
+match_minutes = 60
+
+[options.step_seconds]
+bounds = "step"
+label = "Each step"
+type = "float"
+default = 1
+range = [0.01, 1.1]
+unit = "s"

@@ -1,0 +1,13 @@
+# The Bot format, an example for the guide on writing a format. Rules decide each player's action,
+# with no weights and no learning. It is added by a person.
+contract = 1
+requires = ">=0.1.0"
+name = "Bot"
+version = "1"
+script = "format.py"
+summary = "A bot.py of rules, no weights and no learning, choosing a named action for each player."
+
+[process]
+threads = 1
+gpu = "never"
+scope = "run"

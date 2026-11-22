@@ -1,0 +1,7 @@
+representation = "extracted"
+hidden = 128
+
+[roles]
+CB = "policies/defender.pt"
+CM = "policies/midfielder.pt"
+CF = "policies/forward.pt"

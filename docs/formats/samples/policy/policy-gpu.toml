@@ -1,0 +1,7 @@
+# The same sample on a GPU, renamed to policy.toml. The Policy format then needs a visible GPU,
+# refuses the team without one, and reports it as not deterministic.
+model = "model.pt"
+representation = "simple115v2"
+stacked = true
+sample = false
+device = "cuda"

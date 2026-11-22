@@ -1,0 +1,5 @@
+team: sample-scripted
+members: []
+controlled_players: 1
+deterministic: true
+description: Runs at the ball, dribbles towards goal and shoots when close.

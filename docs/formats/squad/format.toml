@@ -1,0 +1,13 @@
+# The Squad format, an example for the guide on writing a format. One recurrent policy plays each
+# role of a team, as multi-agent training makes them. It is added by a person.
+contract = 1
+requires = ">=0.1.0"
+name = "Squad"
+version = "1"
+script = "format.py"
+summary = "One recurrent policy per role, as multi-agent training makes them, each player with a state of its own."
+
+[process]
+threads = 2
+gpu = "never"
+scope = "run"
