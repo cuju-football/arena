@@ -1,0 +1,61 @@
+# Copyright 2026 The cuju Authors
+# SPDX-License-Identifier: Apache-2.0
+
+name: ci
+
+on:
+    push:
+    pull_request:
+    schedule:
+        - cron: '17 4 * * 1'
+
+permissions:
+    contents: read
+
+jobs:
+    arena:
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-24.04, windows-2025, macos-15]
+        runs-on: ${{ matrix.os }}
+        timeout-minutes: 90
+        defaults:
+            run:
+                shell: bash
+        steps:
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
+              with:
+                  python-version: '3.12'
+            - name: Install CPU PyTorch
+              run: |
+                  if [ "$RUNNER_OS" = macOS ]; then pip install torch
+                  else pip install torch --index-url https://download.pytorch.org/whl/cpu; fi
+            - name: Build and install the arena beside the engine
+              run: |
+                  python -m pip install build ruff twine
+                  python -m build
+                  python -m twine check --strict dist/*
+                  python ci/check_wheel.py dist/*.whl dist/*.tar.gz
+                  wheel=(dist/cuju_arena-*.whl)
+                  python -m pip install --index-url https://pypi.org/simple 'cuju-engine>=0.3.0,<0.4' "${wheel[0]}[test]"
+                  python -m pip check
+            - name: Check the installed family
+              run: |
+                  cuju --version
+                  cuju help arena
+                  python -m cuju arena --help
+                  python -c "from importlib.metadata import distributions; assert {d.name for d in distributions() if d.name.startswith('cuju')} == {'cuju-engine', 'cuju-arena'}"
+            - name: Test the arena
+              run: python -m pytest -n 4 -v -o faulthandler_timeout=900
+            - name: Check sources, notes and references
+              if: runner.os == 'Linux'
+              run: |
+                  ruff check .
+                  ruff format --check .
+                  python ci/fragments.py check
+                  python ci/check_stale.py
+                  python ci/check_links.py --offline
+                  python ci/check_prose.py
+                  python ci/make_reference.py --check
