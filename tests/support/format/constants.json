@@ -1,0 +1,74 @@
+{
+    "sections": {
+        "limit": 64,
+        "tags": [
+            "FRMS",
+            "TRKS",
+            "ANNO",
+            "PLYR",
+            "ACTS",
+            "STAT",
+            "GRID"
+        ]
+    },
+    "fidelity": [
+        "joints",
+        "positions"
+    ],
+    "start": [
+        "reset",
+        "mid"
+    ],
+    "player_fields": {
+        "limit": 64,
+        "names": [
+            "direction",
+            "tired",
+            "sticky",
+            "agent",
+            "role",
+            "designated",
+            "ball_momentum"
+        ]
+    },
+    "scales": {
+        "direction": 100000,
+        "height": 1000,
+        "tired": 32767
+    },
+    "sticky": [
+        "left",
+        "top_left",
+        "top",
+        "top_right",
+        "right",
+        "bottom_right",
+        "bottom",
+        "bottom_left",
+        "sprint",
+        "dribble",
+        "keeper_rush",
+        "pressure",
+        "team_pressure"
+    ],
+    "agents_a_side": 32,
+    "no_action": 255,
+    "overlays": {
+        "kinds": [
+            "grid",
+            "targets",
+            "actions"
+        ],
+        "types": [
+            "uint8",
+            "float16"
+        ],
+        "grids": 4,
+        "vectors": 4,
+        "rows": 72,
+        "columns": 96,
+        "vector": 64,
+        "name": 40,
+        "bytes": 33554432
+    }
+}

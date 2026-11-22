@@ -1,0 +1,192 @@
+{
+    "about": "The cases of the query language of moments, which tests/arena/test_moments.py reads for the server's reader, tests/web/moments_query.mjs for the page's reader and ci/mock_search.py for the answers of the mock. The parse cases give each query with its terms or the message id that refuses it. The find cases give the moments that the signal terms of a query find in the signals of the fixture, under the settings of the case or the shipped [search] defaults.",
+    "filters": [
+        "kind", "team", "player", "scenario", "source", "tournament", "match", "date", "since",
+        "until", "after", "before", "score", "outcome", "limit", "value-drop", "surprise",
+        "entropy", "reward", "ann"
+    ],
+    "signal_words": {
+        "value-drop": "value-drop", "value-drops": "value-drop", "surprise": "surprise",
+        "surprises": "surprise", "unlikely": "surprise"
+    },
+    "kind_words": [
+        "goal", "goals", "own-goal", "own-goals", "owngoal", "shot", "shots", "header", "headers",
+        "save", "saves", "block", "blocks", "woodwork", "post", "posts", "bar", "crossbar",
+        "near-miss", "near-misses", "nearmiss", "miss", "misses", "pass", "passes", "tackle",
+        "tackles", "slide", "slides", "foul", "fouls", "card", "cards", "yellow", "yellows",
+        "yellow-card", "red", "reds", "red-card", "offside", "offsides", "restart", "restarts",
+        "set-piece", "set-pieces", "setpiece", "corner", "corners", "free-kick", "free-kicks",
+        "freekick", "penalty", "penalties", "throw-in", "throw-ins", "throwin", "goal-kick",
+        "goal-kicks", "goalkick", "kickoff", "kick-off", "kickoffs", "possession", "turnover",
+        "turnovers", "halftime", "half-time", "fulltime", "full-time"
+    ],
+    "parse": [
+        {"query": "", "terms": []},
+        {"query": "goal team:Greens after:60", "terms": [
+            {"type": "kind", "word": "goal", "negated": false},
+            {"type": "filter", "key": "team", "value": "Greens", "negated": false},
+            {"type": "filter", "key": "after", "value": "60", "negated": false}
+        ]},
+        {"query": "goal -team:left limit:5", "terms": [
+            {"type": "kind", "word": "goal", "negated": false},
+            {"type": "filter", "key": "team", "value": "left", "negated": true},
+            {"type": "filter", "key": "limit", "value": "5", "negated": false}
+        ]},
+        {"query": "team:\"Harbour Rovers\" Harbour", "terms": [
+            {"type": "filter", "key": "team", "value": "Harbour Rovers", "negated": false},
+            {"type": "word", "text": "Harbour", "negated": false}
+        ]},
+        {"query": "Corners Pénalty -pass", "terms": [
+            {"type": "kind", "word": "Corners", "negated": false},
+            {"type": "kind", "word": "Pénalty", "negated": false},
+            {"type": "kind", "word": "pass", "negated": true}
+        ]},
+        {"query": "\"free-kick:x\" free-kick", "terms": [
+            {"type": "word", "text": "free-kick:x", "negated": false},
+            {"type": "kind", "word": "free-kick", "negated": false}
+        ]},
+        {"query": "\"two words\" -zzz entropy", "terms": [
+            {"type": "word", "text": "two words", "negated": false},
+            {"type": "word", "text": "zzz", "negated": true},
+            {"type": "word", "text": "entropy", "negated": false}
+        ]},
+        {"query": "KIND:corner,penalty", "terms": [
+            {"type": "filter", "key": "kind", "value": "corner,penalty", "negated": false}
+        ]},
+        {"query": "value-drop", "terms": [
+            {"type": "signal", "signal": "value-drop", "name": null, "op": null, "bound": null}
+        ]},
+        {"query": "value-drop:value team:left", "terms": [
+            {"type": "signal", "signal": "value-drop", "name": "value", "op": null, "bound": null},
+            {"type": "filter", "key": "team", "value": "left", "negated": false}
+        ]},
+        {"query": "VALUE-DROP:\"my value\"", "terms": [
+            {"type": "signal", "signal": "value-drop", "name": "my value", "op": null, "bound": null}
+        ]},
+        {"query": "surprise Unlikely value-drops", "terms": [
+            {"type": "signal", "signal": "surprise", "name": null, "op": null, "bound": null},
+            {"type": "signal", "signal": "surprise", "name": null, "op": null, "bound": null},
+            {"type": "signal", "signal": "value-drop", "name": null, "op": null, "bound": null}
+        ]},
+        {"query": "surprise:0.05 surprise:+.1 surprise:1", "terms": [
+            {"type": "signal", "signal": "surprise", "name": null, "op": null, "bound": 0.05},
+            {"type": "signal", "signal": "surprise", "name": null, "op": null, "bound": 0.1},
+            {"type": "signal", "signal": "surprise", "name": null, "op": null, "bound": 1}
+        ]},
+        {"query": "entropy:>1.5 entropy:<=0.2", "terms": [
+            {"type": "signal", "signal": "entropy", "name": null, "op": ">", "bound": 1.5},
+            {"type": "signal", "signal": "entropy", "name": null, "op": "<=", "bound": 0.2}
+        ]},
+        {"query": "reward:>0 reward:>=-1", "terms": [
+            {"type": "signal", "signal": "annotation", "name": "reward", "op": ">", "bound": 0},
+            {"type": "signal", "signal": "annotation", "name": "reward", "op": ">=", "bound": -1}
+        ]},
+        {"query": "ann:value<-0.5 ann:value<.5", "terms": [
+            {"type": "signal", "signal": "annotation", "name": "value", "op": "<", "bound": -0.5},
+            {"type": "signal", "signal": "annotation", "name": "value", "op": "<", "bound": 0.5}
+        ]},
+        {"query": "ann:\"team spirit>=2\" goal", "terms": [
+            {"type": "signal", "signal": "annotation", "name": "team spirit", "op": ">=", "bound": 2},
+            {"type": "kind", "word": "goal", "negated": false}
+        ]},
+        {"query": "foo:1", "error": "server.search.filter"},
+        {"query": "free-kick:x", "error": "server.search.filter"},
+        {"query": "-surprise", "error": "server.search.signal_negated"},
+        {"query": "goal -value-drop:value", "error": "server.search.signal_negated"},
+        {"query": "value-drop:\"\"", "error": "server.search.value_name"},
+        {"query": "surprise:2", "error": "server.search.probability"},
+        {"query": "surprise:high", "error": "server.search.probability"},
+        {"query": "entropy:1.5", "error": "server.search.bound"},
+        {"query": "entropy:>x", "error": "server.search.bound"},
+        {"query": "reward:0", "error": "server.search.bound"},
+        {"query": "ann:value", "error": "server.search.annotation"},
+        {"query": "ann:<0.5", "error": "server.search.annotation"}
+    ],
+    "fixture": {
+        "header": {
+            "steps_per_second": 10,
+            "teams": [{"name": "Greens"}, {"name": "Reds"}],
+            "players": [
+                {"team": 0, "index": 0, "goalkeeper": true},
+                {"team": 0, "index": 1, "goalkeeper": false},
+                {"team": 1, "index": 0, "goalkeeper": true},
+                {"team": 1, "index": 1, "goalkeeper": false}
+            ]
+        },
+        "moments": [
+            {"id": "restart-0", "kind": "restart", "step": 0, "t": 0, "team": 0, "clock": 0, "score": [0, 0], "data": {"restart": "kickoff"}},
+            {"id": "goal-100", "kind": "goal", "step": 100, "t": 10, "team": 0, "player": 1, "clock": 180000, "score": [1, 0], "data": {}},
+            {"id": "fulltime-200", "kind": "fulltime", "step": 200, "t": 20, "clock": 360000, "score": [1, 0], "data": {}}
+        ],
+        "signals": {
+            "series": {
+                "1:value": {
+                    "count": 200, "min": -0.4, "max": 0.8, "mean": 0.3,
+                    "drops": [[50, -0.6], [120, -0.25], [52, -0.2], [121, -0.1], [150, -0.05]],
+                    "rises": [[60, 0.5], [130, 0.4], [10, 0.1]]
+                },
+                "3:value": {
+                    "count": 200, "min": 0.1, "max": 0.5, "mean": 0.3,
+                    "drops": [[80, -0.35]], "rises": [[70, 0.3]]
+                },
+                "-:reward": {
+                    "count": 200, "min": 0, "max": 1, "mean": 0.01,
+                    "drops": [[101, -1]], "rises": [[100, 1]]
+                }
+            },
+            "unlikely": {"1": [[55, 0.01], [140, 0.04], [90, 0.08]], "3": [[30, 0.05]]},
+            "entropy": {
+                "1": {"count": 200, "mean": 1.2, "min": [40, 0.3], "max": [55, 2.6]},
+                "3": {"count": 200, "mean": 1.0, "min": [12, 0.5], "max": [33, 1.9]}
+            }
+        }
+    },
+    "find": [
+        {"query": "value-drop", "found": [
+            {"id": "value-drop-50-1-value", "kind": "value-drop", "step": 50, "player": 1, "data": {"name": "value", "change": -0.6}},
+            {"id": "value-drop-121-1-value", "kind": "value-drop", "step": 121, "player": 1, "data": {"name": "value", "change": -0.35}}
+        ]},
+        {"query": "value-drop:Value", "settings": {"value_drop": 0.3, "window": 0.1, "surprise": 0.1}, "found": [
+            {"id": "value-drop-50-1-value", "kind": "value-drop", "step": 50, "player": 1, "data": {"name": "value", "change": -0.6}},
+            {"id": "value-drop-80-3-value", "kind": "value-drop", "step": 80, "player": 3, "data": {"name": "value", "change": -0.35}}
+        ]},
+        {"query": "value-drop", "settings": {"value_drop": 0.7, "window": 2.0, "surprise": 0.1}, "found": [
+            {"id": "value-drop-52-1-value", "kind": "value-drop", "step": 52, "player": 1, "data": {"name": "value", "change": -0.8}}
+        ]},
+        {"query": "value-drop:reward", "found": []},
+        {"query": "surprise", "found": [
+            {"id": "surprise-30-3", "kind": "surprise", "step": 30, "player": 3, "data": {"probability": 0.05}},
+            {"id": "surprise-55-1", "kind": "surprise", "step": 55, "player": 1, "data": {"probability": 0.01}},
+            {"id": "surprise-90-1", "kind": "surprise", "step": 90, "player": 1, "data": {"probability": 0.08}},
+            {"id": "surprise-140-1", "kind": "surprise", "step": 140, "player": 1, "data": {"probability": 0.04}}
+        ]},
+        {"query": "surprise:0.04", "found": [
+            {"id": "surprise-55-1", "kind": "surprise", "step": 55, "player": 1, "data": {"probability": 0.01}},
+            {"id": "surprise-140-1", "kind": "surprise", "step": 140, "player": 1, "data": {"probability": 0.04}}
+        ]},
+        {"query": "entropy:>2", "found": [
+            {"id": "entropy-55-1", "kind": "entropy", "step": 55, "player": 1, "data": {"entropy": 2.6}}
+        ]},
+        {"query": "entropy:<0.4", "found": [
+            {"id": "entropy-40-1", "kind": "entropy", "step": 40, "player": 1, "data": {"entropy": 0.3}}
+        ]},
+        {"query": "reward:>0.5", "found": [
+            {"id": "annotation-100-match-reward", "kind": "annotation", "step": 100, "data": {"name": "reward", "op": ">", "bound": 0.5}}
+        ]},
+        {"query": "ann:value<0", "found": [
+            {"id": "annotation-50-1-value", "kind": "annotation", "step": 50, "player": 1, "data": {"name": "value", "op": "<", "bound": 0}}
+        ]},
+        {"query": "ann:value>0.45", "found": [
+            {"id": "annotation-60-1-value", "kind": "annotation", "step": 60, "player": 1, "data": {"name": "value", "op": ">", "bound": 0.45}},
+            {"id": "annotation-70-3-value", "kind": "annotation", "step": 70, "player": 3, "data": {"name": "value", "op": ">", "bound": 0.45}}
+        ]},
+        {"query": "value-drop surprise", "found": [
+            {"id": "surprise-30-3", "kind": "surprise", "step": 30, "player": 3, "data": {"probability": 0.05}},
+            {"id": "value-drop-50-1-value", "kind": "value-drop", "step": 50, "player": 1, "data": {"name": "value", "change": -0.6}},
+            {"id": "surprise-55-1", "kind": "surprise", "step": 55, "player": 1, "data": {"probability": 0.01}},
+            {"id": "surprise-90-1", "kind": "surprise", "step": 90, "player": 1, "data": {"probability": 0.08}},
+            {"id": "value-drop-121-1-value", "kind": "value-drop", "step": 121, "player": 1, "data": {"name": "value", "change": -0.35}},
+            {"id": "surprise-140-1", "kind": "surprise", "step": 140, "player": 1, "data": {"probability": 0.04}}
+        ]}
+    ]
+}

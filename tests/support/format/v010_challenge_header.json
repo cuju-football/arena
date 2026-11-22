@@ -1,0 +1,49 @@
+{
+    "comment": "What cuju-render 0.1.0 wrote for the first attempt of a run of a team on its challenge One on one, the fields of the header that name the run and the summary beside the recording with the group of the run. tests/render/test_old_recordings.py and tests/web/old_recordings.mjs read it, and hold that such a recording still opens under the title it was saved with.",
+    "header": {
+        "title": "One on one, attempt 1, toy",
+        "title_id": "server.names.challenge_attempt",
+        "title_values": {
+            "challenge": {"kind": "challenge", "name": "one_on_one", "text": "One on one"},
+            "attempt": "1",
+            "competitor": "toy"
+        },
+        "scenario": "1_vs_1_easy",
+        "provenance": {
+            "source": "challenge",
+            "challenge": "one_on_one",
+            "attempt": 0,
+            "seed": 1532063013,
+            "scenario": "1_vs_1_easy",
+            "teams": ["t-20261110-120000-ab12", "builtin"],
+            "competitor": "toy",
+            "agent_counts": [1, 0],
+            "action_set": "default",
+            "ability": [0.0, 0.0],
+            "cuju_version": "0.2.1"
+        }
+    },
+    "group": {
+        "id": "g-20261110-120500-cd34",
+        "kind": "challenge",
+        "challenge": "one_on_one",
+        "title": "One on one, toy",
+        "title_id": "server.names.challenge_run",
+        "title_values": {
+            "challenge": {"kind": "challenge", "name": "one_on_one", "text": "One on one"},
+            "competitor": "toy"
+        },
+        "competitor": "toy",
+        "result": "goal difference +1, practice",
+        "result_id": "server.names.run_practice",
+        "result_values": {
+            "value": {"id": "server.names.run_margin", "text": "goal difference +1", "values": {"value": "+1"}}
+        },
+        "state": "done",
+        "attempt": 0,
+        "attempts": 1,
+        "value": 1,
+        "seconds": 1.2,
+        "practice": true
+    }
+}
